@@ -2,6 +2,25 @@ import React from 'react';
 import { Icons } from './Icons';
 import useIsMobile from './useIsMobile';
 
+const SOCIAL_LINKS = [
+  { Icon: Icons.Instagram, href: 'https://www.instagram.com/glcw.in', label: 'Instagram' },
+  { Icon: Icons.Zap, href: null, label: 'Meesho' },
+  { Icon: Icons.Mail, href: 'mailto:guptalasercuttingworks@gmail.com', label: 'Email' },
+];
+
+const QUICK_LINKS = [
+  { label: 'Home Decor', cat: 'home' },
+  { label: 'LED Products', cat: 'led' },
+  { label: 'Mouse Pads', cat: 'mousepads' },
+];
+
+const CONTACT_INFO = [
+  // { Icon: Icons.Phone, text: '+91 98765 43210', sub: 'Direct contact' },
+  { Icon: Icons.Instagram, text: '@glcw.in', sub: 'Follow our reels', href: 'https://www.instagram.com/glcw.in' },
+  // { Icon: Icons.User, text: 'Seller Profile', sub: 'View catalogue' },
+  { Icon: Icons.Mail, text: 'Custom Orders (Coming Soon) ', sub: 'Product options', href: null },
+];
+
 export default function Footer() {
   const isMobile = useIsMobile();
 
@@ -24,57 +43,45 @@ export default function Footer() {
           <div onClick={() => window.location.href = '/'} style={{ fontFamily: 'Syne', fontWeight: 800, fontSize: isMobile ? '1.3rem' : '1.6rem', color: '#b98a22', marginBottom: 6, cursor: 'pointer' }}>GLCW</div>
           <p style={{ fontSize: '0.78rem', color: 'var(--muted)', lineHeight: 1.7, maxWidth: 220 }}>Gupta Laser Cutting Works</p>
           <div style={{ display: 'flex', gap: 8, marginTop: '0.75rem' }}>
-        {[
-  { Icon: Icons.Instagram, href: 'https://www.instagram.com/glcw.in' },
-  { Icon: Icons.Zap, href: null },
-  { Icon: Icons.Mail, href: 'mailto:guptalasercuttingworks@gmail.com' },
-].map(({ Icon, href }, i) => (
-  <div key={i}
-    onClick={() => href && window.open(href, '_blank')}
-    style={{
-      width: 30, height: 30, borderRadius: '50%',
-      background: 'rgba(184,134,11,0.08)', border: '1px solid rgba(184,134,11,0.2)',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      cursor: href ? 'pointer' : 'default', transition: 'all 0.2s',
-    }}
-    onMouseEnter={e => { if (href) { e.currentTarget.style.background = 'rgba(184,134,11,0.18)'; }}}
-    onMouseLeave={e => { e.currentTarget.style.background = 'rgba(184,134,11,0.08)'; }}
-  ><Icon size={13} color="#7a5200" /></div>
-))}
+            {SOCIAL_LINKS.map(({ Icon, href, label }) => {
+              const Component = href ? 'a' : 'div';
+              return (
+                <Component key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                  style={{
+                    width: 30, height: 30, borderRadius: '50%',
+                    background: 'rgba(184,134,11,0.08)', border: '1px solid rgba(184,134,11,0.2)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    cursor: href ? 'pointer' : 'default', transition: 'all 0.2s', textDecoration: 'none',
+                  }}
+                  onMouseEnter={e => { if (href) { e.currentTarget.style.background = 'rgba(184,134,11,0.18)'; } }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(184,134,11,0.08)'; }}
+                ><Icon size={13} color="#7a5200" /></Component>
+              );
+            })}
           </div>
         </div>
 
-        {/* Quick links */}
+        {/* Quick Links */}
         <div>
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.15em', color: '#7a5200', textTransform: 'uppercase', fontWeight: 600, marginBottom: '0.75rem' }}>Quick Links</div>
-        {[
-  { label: 'Home Decor', cat: 'home' },
-  { label: 'LED Products', cat: 'led' },
-  { label: 'Mouse Pads', cat: 'mousepads' },
-].map(({ label, cat }) => (
-  <div key={label} style={{ fontSize: '0.78rem', color: 'var(--muted)', marginBottom: '0.4rem', cursor: 'pointer', transition: 'color 0.2s' }}
-    onClick={() => {
-      window.dispatchEvent(new CustomEvent('setFilter', { detail: cat }));
-     
-      setTimeout(() => {
-        document.getElementById('product-section')?.scrollIntoView({ behavior: 'smooth' });
-      }, 500);
-    }}
-    onMouseEnter={e => e.target.style.color = 'var(--gold)'}
-    onMouseLeave={e => e.target.style.color = 'var(--muted)'}
-  >{label}</div>
-))}
+          {QUICK_LINKS.map(({ label, cat }) => (
+            <div key={label} style={{ fontSize: '0.78rem', color: 'var(--muted)', marginBottom: '0.4rem', cursor: 'pointer', transition: 'color 0.2s' }}
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('setFilter', { detail: cat }));
+                setTimeout(() => {
+                  document.getElementById('product-section')?.scrollIntoView({ behavior: 'smooth' });
+                }, 500);
+              }}
+              onMouseEnter={e => e.target.style.color = 'var(--gold)'}
+              onMouseLeave={e => e.target.style.color = 'var(--muted)'}
+            >{label}</div>
+          ))}
         </div>
 
         {/* Contact */}
         <div>
           <div style={{ fontSize: '0.6rem', letterSpacing: '0.15em', color: '#7a5200', textTransform: 'uppercase', fontWeight: 600, marginBottom: '0.75rem' }}>Contact</div>
-          {[
-            // { Icon: Icons.Phone, text: '+91 98765 43210', sub: 'Direct contact' },
-            { Icon: Icons.Instagram, text: '@glcw.in', sub: 'Follow our reels', href: 'https://www.instagram.com/glcw.in' },
-            // { Icon: Icons.User, text: 'Seller Profile', sub: 'View catalogue' },
-            { Icon: Icons.Mail, text: 'Custom Orders (Coming Soon) ', sub: 'Product options' },
-          ].map(c => (
+          {CONTACT_INFO.map(c => (
             <div key={c.text} onClick={() => c.href && window.open(c.href, '_blank')} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: '0.6rem', cursor: c.href ? 'pointer' : 'default' }}>
               <c.Icon size={14} color="#7a5200" style={{ marginTop: 2 }} />
               <div>

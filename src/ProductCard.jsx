@@ -46,11 +46,11 @@ export default function ProductCard({ product, index, isMobile = false }) {
         transform: `translateY(${hovered ? '-6px' : '0'})`,
         transition: 'transform 0.3s ease',
         borderRadius: isMobile ? 14 : 20,
-        background: 'linear-gradient(160deg, #ffffff 0%, #faf7f2 100%)',
-        border: `1px solid ${hovered ? 'rgba(184,134,11,0.4)' : 'rgba(180,150,80,0.15)'}`,
+        background: 'linear-gradient(160deg, #ffffff 0%, #fff5f2 100%)',
+        border: `1px solid ${hovered ? 'rgba(210, 20, 58, 0.4)' : 'rgba(218, 165, 50, 0.2)'}`,
         boxShadow: hovered
-          ? '0 20px 40px rgba(180,150,80,0.2), 0 0 20px rgba(184,134,11,0.1)'
-          : '0 4px 16px rgba(180,150,80,0.1)',
+          ? '0 20px 40px rgba(210, 20, 58, 0.15), 0 0 20px rgba(218, 165, 50, 0.15)'
+          : '0 4px 16px rgba(210, 20, 58, 0.08)',
         overflow: 'hidden',
         transition: hovered ? 'border 0.1s, box-shadow 0.1s' : 'all 0.5s ease',
         position: 'relative', width: '100%',
@@ -87,6 +87,12 @@ export default function ProductCard({ product, index, isMobile = false }) {
             setActiveImg(i => (i + (delta < 0 ? 1 : -1) + images.length) % images.length);
           }}
         >
+        {/* Rakhi Thread Accent */}
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, height: 4, zIndex: 10,
+          background: 'repeating-linear-gradient(45deg, #D2143A, #D2143A 8px, #FFD700 8px, #FFD700 16px)'
+        }} />
+
           {(() => {
             const images = [product.image, product.image2, product.image3].filter(Boolean);
             return images.length > 0 ? (
@@ -105,7 +111,7 @@ export default function ProductCard({ product, index, isMobile = false }) {
                     {images.map((_, i) => (
                       <div key={i} style={{
                         width: activeImg === i ? 14 : 5, height: 3, borderRadius: 999,
-                        background: activeImg === i ? '#b8860b' : 'rgba(184,134,11,0.3)',
+                        background: activeImg === i ? '#D2143A' : 'rgba(210, 20, 58, 0.3)',
                         transition: 'all 0.3s ease',
                       }} />
                     ))}
