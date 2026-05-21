@@ -47,10 +47,10 @@ export default function ProductCard({ product, index, isMobile = false }) {
         transition: 'transform 0.3s ease',
         borderRadius: isMobile ? 14 : 20,
         background: 'linear-gradient(160deg, #ffffff 0%, #fff5f2 100%)',
-        border: `1px solid ${hovered ? 'rgba(210, 20, 58, 0.4)' : 'rgba(218, 165, 50, 0.2)'}`,
+        border: `1px solid ${hovered ? 'rgba(184, 134, 11, 0.4)' : 'rgba(218, 165, 50, 0.2)'}`,
         boxShadow: hovered
-          ? '0 20px 40px rgba(210, 20, 58, 0.15), 0 0 20px rgba(218, 165, 50, 0.15)'
-          : '0 4px 16px rgba(210, 20, 58, 0.08)',
+          ? '0 20px 40px rgba(184, 134, 11, 0.15), 0 0 20px rgba(218, 165, 50, 0.15)'
+          : '0 4px 16px rgba(184, 134, 11, 0.08)',
         overflow: 'hidden',
         transition: hovered ? 'border 0.1s, box-shadow 0.1s' : 'all 0.5s ease',
         position: 'relative', width: '100%',
@@ -87,12 +87,6 @@ export default function ProductCard({ product, index, isMobile = false }) {
             setActiveImg(i => (i + (delta < 0 ? 1 : -1) + images.length) % images.length);
           }}
         >
-        {/* Rakhi Thread Accent */}
-        <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, height: 4, zIndex: 10,
-          background: 'repeating-linear-gradient(45deg, #D2143A, #D2143A 8px, #FFD700 8px, #FFD700 16px)'
-        }} />
-
           {(() => {
             const images = [product.image, product.image2, product.image3].filter(Boolean);
             return images.length > 0 ? (
@@ -111,7 +105,7 @@ export default function ProductCard({ product, index, isMobile = false }) {
                     {images.map((_, i) => (
                       <div key={i} style={{
                         width: activeImg === i ? 14 : 5, height: 3, borderRadius: 999,
-                        background: activeImg === i ? '#D2143A' : 'rgba(210, 20, 58, 0.3)',
+                        background: activeImg === i ? 'var(--gold)' : 'rgba(184, 134, 11, 0.3)',
                         transition: 'all 0.3s ease',
                       }} />
                     ))}
@@ -155,7 +149,7 @@ export default function ProductCard({ product, index, isMobile = false }) {
         </div>
 
         {/* Body */}
-        <div style={{ padding: isMobile ? '0.6rem 0.7rem' : '1rem 1.1rem',minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: isMobile ? '0.6rem 0.7rem' : '1rem 1.1rem', minWidth: 0, display: 'flex', flexDirection: 'column' }}>
           <div style={{
             fontSize: isMobile ? '0.55rem' : '0.6rem',
             letterSpacing: '0.15em', color: 'var(--gold)',
@@ -168,13 +162,14 @@ export default function ProductCard({ product, index, isMobile = false }) {
             {product.cat}
           </div>
 
-   <div style={{
-  fontFamily: 'Inter', fontWeight: 700,
-  fontSize: isMobile ? '0.78rem' : '0.95rem',
-  color: 'var(--text)', marginBottom: isMobile ? 2 : 4, lineHeight: 1.3,
-  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-  maxWidth: '100%', display: 'block', minWidth: 0,
-}}>{product.name}</div>
+          <div style={{
+            fontFamily: 'Inter', fontWeight: 700,
+            fontSize: isMobile ? '0.78rem' : '0.95rem',
+            color: 'var(--text)', marginBottom: isMobile ? 2 : 4, lineHeight: 1.3,
+            whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+            maxWidth: '100%', display: 'block', minWidth: 0,
+          }}>{product.name}</div>
+
           {!isMobile && (
             <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginBottom: '0.6rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {product.desc}
