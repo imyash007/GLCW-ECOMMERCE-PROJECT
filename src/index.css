@@ -1,118 +1,118 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --bg: #f5f0e8;
-  --surface: #ede8df;
-  --card: #ffffff;
-  --border: rgba(180,150,80,0.15);
-  --border-gold: rgba(180,150,80,0.35);
-  --text: #1a1208;
-  --muted: #7a6a4a;
-  --gold: #b8860b;
-  --gold-light: #daa532;
-  --meesho: #d4006e;
-  --amazon: #c45000;
-  --green: #1a7a3a;
-  --red: #cc2200;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Instrument Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
-
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(218,165,50,0.3); border-radius: 2px; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-@keyframes orb1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -30px) scale(1.1); }
-  66% { transform: translate(-20px, 40px) scale(0.9); }
-}
-@keyframes orb2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-50px, 20px) scale(0.95); }
-  66% { transform: translate(30px, -40px) scale(1.05); }
-}
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
-}
-
-/* Scroll fade-in */
-.fade-in-card {
-  opacity: 0;
-  transform: translateY(28px) scale(0.97);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.fade-in-card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .header-nav { display: none !important; }
-  .header-mobile-right { display: flex !important; }
-  .mobile-menu { display: block !important; }
-  .product-grid-inner {
-    padding: 0 1rem 2rem !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-}
 
-@media (min-width: 769px) {
-  .mobile-menu { display: none !important; }
-  .header-mobile-right { display: none !important; }
-  .product-grid-inner {
-    padding: 0 2.5rem 3rem !important;
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 1.25rem !important;
+  :root {
+    --bg: #f5f0e8;
+    --surface: #ede8df;
+    --card: #ffffff;
+    --border: rgba(180,150,80,0.15);
+    --border-gold: rgba(180,150,80,0.35);
+    --text: #1a1208;
+    --muted: #7a6a4a;
+    --gold: #b8860b;
+    --gold-light: #daa532;
+    --meesho: #d4006e;
+    --amazon: #c45000;
+    --green: #1a7a3a;
+    --red: #cc2200;
   }
-}
 
-/* Scroll fade-in animation */
-.fade-in-card {
-  opacity: 0;
-  transform: translateY(28px) scale(0.97);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
+  html { scroll-behavior: smooth; }
 
-.fade-in-card.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+  body {
+    font-family: 'Instrument Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
-.product-grid-inner::-webkit-scrollbar {
-  display: none;
-}
+  a { text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; }
+
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(218,165,50,0.3); border-radius: 2px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes orb1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 40px) scale(0.9); }
+  }
+  @keyframes orb2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-50px, 20px) scale(0.95); }
+    66% { transform: translate(30px, -40px) scale(1.05); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+  }
+
+  /* Scroll fade-in */
+  .fade-in-card {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .fade-in-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .header-nav { display: none !important; }
+    .header-mobile-right { display: flex !important; }
+    .mobile-menu { display: block !important; }
+    .product-grid-inner {
+      padding: 0 1rem 2rem !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 0.75rem !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-menu { display: none !important; }
+    .header-mobile-right { display: none !important; }
+    .product-grid-inner {
+      padding: 0 2.5rem 3rem !important;
+      grid-template-columns: repeat(5, 1fr) !important;
+      gap: 1.25rem !important;
+    }
+  }
+
+  /* Scroll fade-in animation */
+  .fade-in-card {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fade-in-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .product-grid-inner::-webkit-scrollbar {
+    display: none;
+  }
