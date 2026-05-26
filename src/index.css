@@ -116,13 +116,3 @@
   .product-grid-inner::-webkit-scrollbar {
     display: none;
   }
-  @keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-@keyframes slideInLeft {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-.slide-left { animation: slideInLeft 0.3s ease forwards; }
-.slide-right { animation: slideInRight 0.3s ease forwards; }

@@ -4,8 +4,6 @@ import { useProducts } from './ProductContext';
 import { Icons } from './Icons';
 import useIsMobile from './useIsMobile';
 
-
-const FILTER_ORDER = ['mousepads', 'led', 'home', 'all'];
 const FILTERS = [
   { label: 'Mouse Pads', key: 'mousepads', Icon: Icons.Grid },
   { label: 'LED Products', key: 'led', Icon: Icons.Bulb },
@@ -15,8 +13,6 @@ const FILTERS = [
 
 export default function ProductGrid({ sectionRef }) {
   const [active, setActive] = useState('mousepads');
-  const [slideDir, setSlideDir] = useState('');
-  const prevActive = useRef('mousepads');
   const { products } = useProducts();
   const isMobile = useIsMobile();
   const filtered = active === 'all' ? products : products.filter(p => p.cat === active);
@@ -70,17 +66,10 @@ export default function ProductGrid({ sectionRef }) {
           </div>
         )}
 
-{FILTERS.map(({ label, key, Icon }) => {
-  const isActive = active === key;
-  return (
-    <button key={key} onClick={() => {
-      const prevIdx = FILTER_ORDER.indexOf(prevActive.current);
-      const nextIdx = FILTER_ORDER.indexOf(key);
-      setSlideDir(nextIdx > prevIdx ? 'slide-right' : 'slide-left');
-      prevActive.current = key;
-      setActive(key);
-      setTimeout(() => setSlideDir(''), 350);
-    }} style={{
+        {FILTERS.map(({ label, key, Icon }) => {
+          const isActive = active === key;
+          return (
+            <button key={key} onClick={() => setActive(key)} style={{
               padding: isMobile ? '0.28rem 0.65rem' : '0.35rem 0.9rem',
               borderRadius: 999, cursor: 'pointer', transition: 'all 0.2s',
               border: `1px solid ${isActive ? 'rgba(184,134,11,0.5)' : 'rgba(180,150,80,0.2)'}`,
@@ -137,7 +126,7 @@ export default function ProductGrid({ sectionRef }) {
       </div>
 
       {/* Grid — 2 cols mobile, 5 cols desktop */}
-     <div className={`product-grid-inner ${slideDir}`} style={{
+      <div className="product-grid-inner" style={{
         padding: isMobile ? '0 1rem 2rem' : '0 2.5rem 3rem',
         display: 'grid',
         gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(5, 1fr)',
