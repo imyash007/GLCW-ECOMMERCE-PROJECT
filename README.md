@@ -27,7 +27,7 @@ This project solves that by providing a clean, fast, and fully responsive e-comm
 - Redirects customers seamlessly to Amazon product listings
 - Creates a professional digital identity for the brand
 
->  Built with love for my father's business — a real-world solution to a real-world problem.
+
 
 ---
 
