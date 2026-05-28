@@ -137,9 +137,9 @@ The `_redirects` file handles client-side routing:
 
 ##  Author
 
-**Yash Gupta**
+**Aayush**
 
-[![GitHub](https://img.shields.io/badge/GitHub-imyash007-181717?style=flat&logo=github)](https://github.com/imyash007)
+[![GitHub](https://img.shields.io/badge/GitHub-imyash007-181717?style=flat&logo=github)][(https://github.com/Aayushm124)]
 
 ---
 
