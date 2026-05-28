@@ -205,7 +205,8 @@ export default function ContactPage() {
                       onBlur={e => e.target.style.borderColor = 'rgba(180,150,80,0.2)'} />
                   </div>
 
-                  <button onClick={handleSubmit} disabled={!form.name || !form.email || !form.phone || !form.message} style={{
+                  <button onClick={handleSubmit} disabled={!form.name 
+                  || !form.email || !form.phone || !form.message} style={{
                     width: '100%', padding: '0.9rem', borderRadius: 12,
                     background: (!form.name || !form.email || !form.phone || !form.message) ? 'rgba(180,150,80,0.1)' : 'linear-gradient(135deg, #b8860b, #daa532)',
                     border: 'none', color: (!form.name || !form.email || !form.phone || !form.message) ? 'var(--muted)' : '#fff',
