@@ -27,17 +27,17 @@ This project solves that by providing a clean, fast, and fully responsive e-comm
 - Redirects customers seamlessly to Amazon product listings
 - Creates a professional digital identity for the brand
 
-> 💡 Built with love for my father's business — a real-world solution to a real-world problem.
+>  Built with love for my father's business — a real-world solution to a real-world problem.
 
 ---
 
 ## 🌐 Live Demo
 
-👉 **[https://glcw.in/](https://glcw.in/)**
+ **[https://glcw.in/](https://glcw.in/)**
 
 ---
 
-## ✨ Features
+##  Features
 
 -  **Product Showcase** — Clean display of all laser-cut products with details
 -  **Amazon Redirect Flow** — Smooth transition from site to Amazon listings
@@ -48,7 +48,7 @@ This project solves that by providing a clean, fast, and fully responsive e-comm
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -59,7 +59,7 @@ This project solves that by providing a clean, fast, and fully responsive e-comm
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 GLCW-ECOMMERCE-PROJECT/
@@ -76,7 +76,7 @@ GLCW-ECOMMERCE-PROJECT/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -115,7 +115,7 @@ npm run build
 
 ---
 
-## 📦 Deployment
+##  Deployment
 
 This project is deployed on **Netlify** with automatic CI/CD from the `main` branch.
 
@@ -126,17 +126,17 @@ The `_redirects` file handles client-side routing:
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 | Desktop View | Mobile View |
 |---|---|
 | ![Desktop](./public/assets/screenshots/image.png) | ![Mobile](./public/assets/screenshots/mobile_view.jpeg) |
 
-> 📝 *Replace the above with actual screenshots of your site*
+>  *Replace the above with actual screenshots of your site*
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, issues, and feature requests are welcome!
 
@@ -148,7 +148,7 @@ Contributions, issues, and feature requests are welcome!
 
 ---
 
-## 👤 Author
+##  Author
 
 **Yash Gupta**
 
