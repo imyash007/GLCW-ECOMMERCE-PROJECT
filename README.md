@@ -139,8 +139,7 @@ The `_redirects` file handles client-side routing:
 
 **Aayush**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Aayushm124-181717?style=flat&logo=github)][(https://github.com/Aayushm124)]
-
+[![GitHub](https://img.shields.io/badge/GitHub-Aayushm124-181717?style=flat&logo=github)](https://github.com/Aayushm124)
 ---
 
 
