@@ -9,7 +9,7 @@
 [![Live Site](https://img.shields.io/badge/🌐%20Live%20Site-glcw.in-DAA532?style=for-the-badge)](https://glcw.in/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://netlify.com/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://glcw.in/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
 
 </div>
@@ -117,7 +117,7 @@ npm run build
 
 ##  Deployment
 
-This project is deployed on **Netlify** with automatic CI/CD from the `main` branch.
+This project is deployed on **Vercel** with automatic CI/CD from the `main` branch.
 
 The `_redirects` file handles client-side routing:
 ```
