@@ -132,7 +132,6 @@ The `_redirects` file handles client-side routing:
 |---|---|
 | ![Desktop](./public/assets/screenshots/image.png) | ![Mobile](./public/assets/screenshots/mobile_view.jpeg) |
 
->  *Replace the above with actual screenshots of your site*
 
 ---
 
