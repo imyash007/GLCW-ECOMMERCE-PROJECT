@@ -1,11 +1,21 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
-const SITE_NAME = 'Gupta Laser Cutting Works';
+const SITE_NAME = "Gupta Laser Cutting Works";
 
-export default function SEO({ title, description, image, url, type = 'website', structuredData }) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Premium Laser Cut Products`;
-  const canonical = url || (typeof window !== 'undefined' ? window.location.href : '');
+export default function SEO({
+  title,
+  description,
+  image,
+  url,
+  type = "website",
+  structuredData,
+}) {
+  const fullTitle = title
+    ? `${title} | ${SITE_NAME}`
+    : `${SITE_NAME} | Premium Laser Cut Products`;
+  const canonical =
+    url || (typeof window !== "undefined" ? window.location.href : "");
 
   return (
     <Helmet>
@@ -26,7 +36,9 @@ export default function SEO({ title, description, image, url, type = 'website', 
       {image && <meta name="twitter:image:alt" content={title || SITE_NAME} />}
 
       {structuredData && (
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       )}
     </Helmet>
   );

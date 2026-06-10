@@ -28,19 +28,24 @@ export function ProductProvider({ children }) {
   const [isAdmin, setIsAdmin] = useState(() => sessionStorage.getItem('sd_admin') === 'true');
 
   // ── Listen to Firestore products in real time ──
-  useEffect(() => {
-   const unsub = onSnapshot(
-  collection(db, 'products'),
-  { includeMetadataChanges: false },
-  snapshot => {
-    if (snapshot.metadata.fromCache) return;
-    const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
-    setProducts(data);
-    setLoading(false);
-  }
-);
-    return () => unsub();
-  }, []);
+ useEffect(() => {
+  const unsub = onSnapshot(
+    collection(db, 'products'),
+    { includeMetadataChanges: false },
+    snapshot => {
+      // ✅ Removed fromCache check — always render whatever Firestore gives us
+      const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+      setProducts(data);
+      setLoading(false);
+    },
+    error => {
+      // ✅ Added error handler — won't silently fail under load
+      console.error('Firestore snapshot error:', error);
+      setLoading(false); // stop spinner so admin sees the empty state, not infinite loading
+    }
+  );
+  return () => unsub();
+}, []);
 
   // ── Listen to Firestore carousel in real time ──
   useEffect(() => {
